@@ -1,0 +1,14 @@
+%Cramers Method
+fprintf('Welcome\n');
+n=input('How many variables are there :');
+A=input('Enter the coefficient matrix : ');
+b=input('Enter the vector matrix :');
+x=zeros(n,1);
+for i=1:n
+    D=A;
+D(:,i)=b;
+x(i)=det(D)/det(A) ;
+if det(A)==0;error('Matrix is invalid');end
+end;
+fprintf('The result is:');
+fprintf('%10.4f' , x);
